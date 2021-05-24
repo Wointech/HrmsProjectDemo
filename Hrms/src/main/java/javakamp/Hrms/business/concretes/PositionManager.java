@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javakamp.Hrms.business.abstracts.PositionService;
+import javakamp.Hrms.core.utilities.results.DataResult;
+import javakamp.Hrms.core.utilities.results.SuccessDataResult;
 import javakamp.Hrms.dataAccess.abstracts.PositionDao;
 import javakamp.Hrms.entities.concretes.Position;
 
@@ -23,9 +25,9 @@ public class PositionManager implements PositionService{
 
 
 	@Override
-	public List<Position> getAll() {
+	public DataResult<List<Position>> getAll() {
 		
-		return this.positionDao.findAll();
+		return new SuccessDataResult<List<Position>>(this.positionDao.findAll());
 	}
 
 }

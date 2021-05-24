@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javakamp.Hrms.business.abstracts.PositionService;
+import javakamp.Hrms.core.utilities.results.DataResult;
 import javakamp.Hrms.entities.concretes.Position;
 
 @RestController
@@ -26,7 +27,7 @@ public class PositionController {
 
 
 	@GetMapping("/getall")
-	public List<Position> getAll() {
+	public DataResult<List<Position>> getAll() {
 		
 		return this.positionService.getAll();
 	}
