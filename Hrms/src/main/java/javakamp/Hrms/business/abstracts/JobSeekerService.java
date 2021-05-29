@@ -4,11 +4,10 @@ import java.util.List;
 
 import javakamp.Hrms.core.utilities.results.DataResult;
 import javakamp.Hrms.core.utilities.results.Result;
-import javakamp.Hrms.entities.concretes.Position;
+import javakamp.Hrms.entities.concretes.JobSeeker;
 
-public interface PositionService {
+public interface JobSeekerService {
 
-	DataResult<List<Position>> getAll();
-	
-	Result add(Position position);
+	DataResult<List<JobSeeker>> getAll();
+	Result add(JobSeeker jobSeeker);
 }

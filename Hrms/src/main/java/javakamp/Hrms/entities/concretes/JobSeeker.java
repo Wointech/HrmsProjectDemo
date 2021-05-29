@@ -10,22 +10,31 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "staff_users")
+@Table(name = "joob_seekers")
 @Data
 @PrimaryKeyJoinColumn(name = "user_id")
 @AllArgsConstructor
 @NoArgsConstructor
-public class StaffUser extends User{
+public class JobSeeker extends User{
 
-	
-	@Column(name = "position_id")
-	private int positionId;
 	
 	@Column(name = "first_name")
 	private String firstName;
 	
 	@Column(name = "last_name")
 	private String lastName;
-
 	
+	@Column(name = "national_identity")
+	private String nationalIdentity;
+	
+	@Column(name = "year_of_birth")
+	private String yearOfBirth;
+	
+	@Column(name = "email_verification")
+	private boolean emailVerification;
+	
+	@Column(name = "mernis_verification")
+	private boolean mernisVerification;
+	
+
 }

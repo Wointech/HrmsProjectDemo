@@ -2,34 +2,34 @@ package javakamp.Hrms.entities.concretes;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "Employers")
+@Table(name = "employers")
 @Data
-public class Employer {
+@PrimaryKeyJoinColumn(name = "user_id")
+@AllArgsConstructor
+@NoArgsConstructor
+public class Employer extends User{
 
-	@Id
-	@GeneratedValue
-	@Column(name="userId")
-	private int userId;
-	
-	@Column(name="companyName")
+
+	@Column(name="company_name")
 	private String companyName;
 
 	@Column(name="website")
 	private String website;
 	
-	@Column(name="telephoneNumber")
+	@Column(name="telephone_number")
 	private int telephoneNumber;
   
-	@Column(name="systemVerification")
+	@Column(name="system_verification")
 	private boolean systemVerification;
 	
-	@Column(name="emailVerification")
+	@Column(name="email_verification")
 	private boolean emailVerification;
 }
